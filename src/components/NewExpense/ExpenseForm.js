@@ -3,19 +3,39 @@ import "./ExpenseForm.css";
 
 const ExpenseForm = () => {
   const [enteredTitle, setEnteredTitle] = useState("");
-  const [enteredAmount, setEntereddAmount] = useState("");
+  const [enteredAmount, setEnteredAmount] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
+  //   const [userImput, setUserImput] = useState({
+  //     enteredTitle: "",
+  //     enteredAmount: "",
+  //     enteredDate: "",
+  //   });
 
   const titleChangeHandler = (event) => {
     setEnteredTitle(event.target.value);
+    // setUserImput({
+    //   ...userImput,
+    //   enteredTitle: event.target.value,
+    // });
+    // setUserImput((prevState) => {
+    //   return { ...prevState, enteredTitle: event.target.value };
+    // });
   };
 
   const amountChangeHandler = (event) => {
-    setEntereddAmount(event.target.value);
+    setEnteredAmount(event.target.value);
+    // setUserImput({
+    //   ...userImput,
+    //   enteredAmount: event.target.value,
+    // });
   };
 
   const dateChangeHandler = (event) => {
     setEnteredDate(event.target.value);
+    // setUserImput({
+    //   ...userImput,
+    //   enteredDate: event.target.value,
+    // });
   };
 
   return (
@@ -40,7 +60,7 @@ const ExpenseForm = () => {
             type="date"
             min="2019-01-01"
             max="2022-12-31"
-            onChange={dateChangeHandle}
+            onChange={dateChangeHandler}
           />
         </div>
       </div>
